@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// controllers로 옮긴다.
+var index = require('../controllers/index')
+
+// MVC로 분리
+router.get('/', index.basicHomePage);
+router.get('/:id', index.getIdBlog);
 
 module.exports = router;
-
-/* git test */
