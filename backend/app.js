@@ -8,9 +8,26 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-// connect mysql
-var mysqlDB = require('./config/mysql/db');
-mysqlDB.connect();
+// // connect mysql
+// var mysqlDB = require('./config/mysql/db');
+// mysqlDB.connect();
+
+// connect DB with 시퀄라이즈
+const sequelize = require('./config/mysql/db');
+const blog = require('./models/blog');
+
+// DB 동기화
+sequelize.sync()
+  .then(() => {
+    console.log('blog table has been created or synchronized successfully.');
+  })
+  .catch(err => {
+    console.error('Failed to synchronize models:', err);
+  });
+
+
+
+
 
 var app = express();
 

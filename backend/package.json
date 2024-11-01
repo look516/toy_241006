@@ -16,6 +16,8 @@
     "mybatis-mapper": "^0.8.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.3",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2"
   }
 }

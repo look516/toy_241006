@@ -5,7 +5,7 @@ var router = express.Router();
 var index = require('../controllers/index')
 
 // MVC로 분리
-router.get('/', index.basicHomePage);
+router.get('/', index.getAllBlog);
 router.get('/:id', index.getIdBlog);
 
 module.exports = router;
